@@ -1,0 +1,23 @@
+.header {
+  background-color: gray;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 2rem;
+
+  div:first-child {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div:last-child {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    transform: translateY(50%);
+  }
+}
