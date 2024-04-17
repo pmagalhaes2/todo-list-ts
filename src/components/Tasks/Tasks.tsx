@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 
 import styles from "./Tasks.module.scss";
 
@@ -12,6 +12,11 @@ export const Tasks: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState("");
   const [tasks, setTasks] = useState<ITask[]>([]);
 
+  useEffect(() => {
+    const existingTasks = localStorage.getItem("tasks");
+    existingTasks && setTasks(JSON.parse(existingTasks));
+  }, []);
+
   const handleAddTask = (e: FormEvent) => {
     e.preventDefault();
 
@@ -21,10 +26,15 @@ export const Tasks: React.FC = () => {
       return;
     }
 
-    setTasks([
+    const newTasks = [
       ...tasks,
       { id: new Date().getTime(), title: taskTitle, done: false },
-    ]);
+    ];
+
+    setTasks(newTasks);
+
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
+
     emptyTaskInput();
   };
 
@@ -54,10 +64,7 @@ export const Tasks: React.FC = () => {
           {tasks.map((task, index) => (
             <li key={index}>
               <label>
-                <input
-                  type="checkbox"
-                  id={`task-${task.id}`}
-                />
+                <input type="checkbox" id={`task-${task.id}`} />
                 {task.title}
               </label>
             </li>
