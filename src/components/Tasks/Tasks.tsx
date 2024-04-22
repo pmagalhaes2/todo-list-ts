@@ -42,6 +42,14 @@ export const Tasks: React.FC = () => {
     setTaskTitle("");
   };
 
+  const handleChecked = (id: number) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, done: !task.done } : task
+    );
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
+
   return (
     <section className={styles.container}>
       <form>
@@ -64,8 +72,15 @@ export const Tasks: React.FC = () => {
           {tasks.map((task, index) => (
             <li key={index}>
               <label>
-                <input type="checkbox" id={`task-${task.id}`} />
-                {task.title}
+                <input
+                  checked={task.done}
+                  type="checkbox"
+                  id={`task-${task.id}`}
+                  onChange={() => handleChecked(task.id)}
+                />
+                <p className={task.done ? styles.checked : ""}>
+                  {task.title}
+                </p>
               </label>
             </li>
           ))}
