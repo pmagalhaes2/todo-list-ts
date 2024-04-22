@@ -1,46 +1,72 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Todo List
 
-## Available Scripts
+![Todo List](https://github.com/pmagalhaes2/todo-list-ts/blob/main/public/desktop-behavior.PNG?raw=true)
 
-In the project directory, you can run:
+This project is a Todo list application developed using React.js and TypeScript. It allows users to manage their tasks efficiently, with data being stored locally in the browser's storage.
 
-### `npm start`
+----------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The following technologies were used in the development of this project:
 
-### `npm test`
+-   **[React.js](https://reactjs.org/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+-   **[SCSS](https://sass-lang.com/)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Other Tools:**
 
-### `npm run build`
+- **[Git](https://git-scm.com/doc)**
+- **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
+-   **[LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)**
+-   **[npm](https://www.npmjs.com/)**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+----------
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📥 Installation and Usage
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Clone the Repository
+  
+$ git clone https://github.com/pmagalhaes2/todo-list-ts.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    
+# Access the project folder in your terminal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+$ cd todo-list-ts
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    
+#  Install Dependencies
+    
+$ npm install 
+    
+# Run the Application
 
-## Learn More
+$ npm start
+    
+# Access the Application
+    
+Open your browser and go to `http://localhost:3000` to view the Todo List application.
+    
+````
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+----------
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🛠️ Development
+
+To contribute to the development of this project, follow these steps:
+
+1.  Fork the repository
+2.  Create a new branch (`git checkout -b feature`)
+3.  Make your changes
+4.  Commit your changes (`git commit -am 'Add new feature'`)
+5.  Push to the branch (`git push origin feature`)
+6.  Create a new Pull Request
+
+----------
+
+
+Developed by [Patricia Magalhães](https://github.com/pmagalhaes2) 🚀
