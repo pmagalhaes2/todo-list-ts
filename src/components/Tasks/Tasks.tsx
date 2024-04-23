@@ -1,6 +1,8 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 import styles from "./Tasks.module.scss";
+import { AddTaskForm } from "../AddTaskForm/AddTaskForm";
+import { TasksList } from "../TasksList/TasksList";
 
 interface ITask {
   title: string;
@@ -52,39 +54,16 @@ export const Tasks: React.FC = () => {
 
   return (
     <section className={styles.container}>
-      <form>
-        <div>
-          <label htmlFor="task-title">Adicionar Tarefa</label>
-          <input
-            value={taskTitle}
-            type="text"
-            id="task-title"
-            placeholder="Título da Tarefa"
-            onChange={(e) => setTaskTitle(e.target.value)}
-          />
-        </div>
-
-        <button onClick={handleAddTask}>Adicionar</button>
-      </form>
+      <AddTaskForm
+        value={taskTitle}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setTaskTitle(e.target.value)
+        }
+        onSubmit={handleAddTask}
+      />
 
       {tasks.length ? (
-        <ul>
-          {tasks.map((task, index) => (
-            <li key={index}>
-              <label>
-                <input
-                  checked={task.done}
-                  type="checkbox"
-                  id={`task-${task.id}`}
-                  onChange={() => handleChecked(task.id)}
-                />
-                <p className={task.done ? styles.checked : ""}>
-                  {task.title}
-                </p>
-              </label>
-            </li>
-          ))}
-        </ul>
+        <TasksList tasks={tasks} onChange={handleChecked} />
       ) : (
         <h2>Não existem tarefas cadastradas!</h2>
       )}
