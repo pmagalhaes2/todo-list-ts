@@ -1,23 +1,14 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 
 import styles from "./Tasks.module.scss";
 import { AddTaskForm } from "../AddTaskForm/AddTaskForm";
 import { TasksList } from "../TasksList/TasksList";
-
-interface ITask {
-  title: string;
-  done: boolean;
-  id: number;
-}
+import { TasksContext } from "../../context/TasksContext";
 
 export const Tasks: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState("");
-  const [tasks, setTasks] = useState<ITask[]>([]);
 
-  useEffect(() => {
-    const existingTasks = localStorage.getItem("tasks");
-    existingTasks && setTasks(JSON.parse(existingTasks));
-  }, []);
+  const { tasks, setTasks } = useContext(TasksContext);
 
   const handleAddTask = (e: FormEvent) => {
     e.preventDefault();
